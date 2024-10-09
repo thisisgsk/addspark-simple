@@ -11,7 +11,7 @@ export default function About() {
                     <FaAnglesDown />
                 </div>
                 <div className="text-4xl uppercase font-bold md:max-w-[60%] text-center leading-relaxed">
-                    add spark to your brand's journey and make it stand out
+                    add spark to your brand&apos;s journey and make it stand out
                 </div>
             </div>
             <div className="flex flex-col md:flex-row px-4 md:px-16 py-12">

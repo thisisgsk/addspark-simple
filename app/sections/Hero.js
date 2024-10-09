@@ -1,8 +1,6 @@
 'use client'
 import { Button } from "@/components/ui/button";
 
-import 'swiper/css';
-
 export default function Hero() {
     return (
         <section className="text-customtext md:px-16 flex flex-col md:flex-row justify-center items-center">
@@ -15,7 +13,7 @@ export default function Hero() {
                         With <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#265D9C] to-[#0BC252]">Add Spark</span>
                     </h1>
                     <p className="leading-loose">
-                        <span className="font-bold">Ready to ignite your brand?</span> At Add Spark, we craft world-class websites, execute laser-focused campaigns, and deliver unmatched PR strategies to make your brand shine. Let's add the spark your brand needs to stand out in the marketplace!
+                        <span className="font-bold">Ready to ignite your brand?</span> At Add Spark, we craft world-class websites, execute laser-focused campaigns, and deliver unmatched PR strategies to make your brand shine. Let&apos;s add the spark your brand needs to stand out in the marketplace!
                     </p>
                     <div className="inline-flex">
                         <a href="#" className="custom-button">Contact Us</a>
