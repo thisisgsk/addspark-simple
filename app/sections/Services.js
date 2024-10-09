@@ -5,8 +5,8 @@ export default function Services() {
         <section className="text-white">
             <div className="container bg-customprimary mx-auto flex px-4 py-16 gap-4 flex-col justify-center items-center">
                 <h2 className='text-4xl md:text-5xl'>Our Services</h2>
-                <div className="flex flex-col gap-4">
-                    <div className='flex flex-col pt-8 md:flex-row gap-4 md:px-4 justify-between items-stretch text-center text-black'>
+                <div className="flex flex-col gap-8">
+                    <div className='flex flex-col pt-8 md:flex-row gap-8 md:px-4 justify-between items-stretch text-center text-black'>
                         <ServiceCard
                             iconCode={'kdduutaw'}
                             title={'Social Media Marketing'}
@@ -23,7 +23,7 @@ export default function Services() {
                             description={'At Add Spark, we offer top-tier SEM services that maximize your brand’s visibility on search engines. Our data-driven strategies and paid advertising campaigns ensure you stay ahead of competitors.'}
                         ></ServiceCard>
                     </div>
-                    <div className='flex flex-col md:flex-row gap-4 md:px-4 justify-between items-stretch text-center text-black'>
+                    <div className='flex flex-col md:flex-row gap-8 md:px-4 justify-between items-stretch text-center text-black'>
                         <ServiceCard
                             iconCode={'fcyboqbm'}
                             title={'Analytics'}

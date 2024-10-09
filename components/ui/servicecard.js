@@ -1,6 +1,6 @@
 const ServiceCard = ({ iconCode, title, description }) => {
     return (
-        <div className="bg-white p-4 gap-4 flex flex-col justify-center items-center w-full shadow-[8px_8px_0px_-2px_rgba(0,0,0,0.75)]">
+        <div className="bg-white p-4 gap-4 flex flex-col justify-center items-center w-[90%] mx-auto md:w-full shadow-[8px_8px_0px_-2px_rgba(0,0,0,0.75)]">
             <lord-icon
                 src={`https://cdn.lordicon.com/${iconCode}.json`}
                 trigger="in"
