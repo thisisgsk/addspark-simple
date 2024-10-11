@@ -7,8 +7,8 @@ export default function Team() {
                 <h2 className='text-4xl md:text-5xl text-center'>Meet The Team</h2>
                 <p className="md:max-w-[60%] text-center mx-auto">
                     Meet the creative minds behind Add Spark! Our talented team of strategists, designers, and
-                    innovators work together to bring your brand's vision to life. With a passion for excellence and a
-                    commitment to results, we're here to make your brand shine.
+                    innovators work together to bring your brand&apos;s vision to life. With a passion for excellence and a
+                    commitment to results, we&apos;re here to make your brand shine.
                 </p>
                 <div className="flex flex-col gap-8 md:px-64">
                     <div className='flex flex-col pt-8 md:flex-row gap-8 md:px-4 justify-between items-stretch text-center'>
