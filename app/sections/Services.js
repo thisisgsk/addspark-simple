@@ -4,7 +4,7 @@ export default function Services() {
     return (
         <section className="text-white">
             <div className="container bg-customprimary mx-auto flex px-4 py-16 gap-4 flex-col justify-center items-center">
-                <h2 className='text-4xl md:text-5xl'>Our Services</h2>
+                <h2 className='text-4xl md:text-5xl custom-heading font-semibold'>Our Services</h2>
                 <div className="flex flex-col gap-8">
                     <div className='flex flex-col pt-8 md:flex-row gap-8 md:px-4 justify-between items-stretch text-center text-black'>
                         <ServiceCard
