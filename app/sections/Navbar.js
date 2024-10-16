@@ -17,10 +17,10 @@ export default function NavBar() {
         <header className="sticky top-0 z-50 backdrop-blur-md">
             <div className="container flex flex-row p-2 md:px-5 items-center justify-between">
                 <a className="flex items-center" href="/">
-                    <Image src='/logo.png' width={200} height={100}></Image>
+                    <Image src='/logo.png' width={60} height={60}></Image>
                 </a>
                 {/* Desktop Nav */}
-                <nav className="hidden md:ml-auto md:mr-auto md:flex gap-8 text-lg flex-wrap items-center justify-evenly">
+                <nav className="hidden md:ml-auto md:mr-auto custom-subheading md:flex gap-8 flex-wrap items-center justify-evenly">
                     {navItems.map((link, index) => (
                         <Link key={index} href="/" className="mr-5 hover:text-gray-900">{link}</Link>
                     ))}
@@ -35,10 +35,10 @@ export default function NavBar() {
                             <HiMenuAlt3 className="text-3xl" />
                         </SheetTrigger>
                         <SheetContent className="bg-custombg">
-                            <nav className="py-8 flex gap-8 flex-col items-center text-base justify-center">
-                                <Image src='/logo.png' width={200} height={100}></Image>
+                            <nav className="py-8 flex gap-8 flex-col custom-subheading items-center text-base justify-center">
+                                <Image src='/logo.png' width={80} height={80}></Image>
                                 {navItems.map((link, index) => (
-                                    <Link key={index} href="/" className="text-xl">{link}</Link>
+                                    <Link key={index} href="/">{link}</Link>
                                 ))}
                                 <a href="#" className="custom-button">Contact Us</a>
                             </nav>

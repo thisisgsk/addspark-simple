@@ -10,7 +10,7 @@ const ServiceCard = ({ iconCode, title, description }) => {
                 colors={{ primary: '#242424', secondary: '#c71f16' }}
                 style={{ width: '80px', height: '80px' }}
             ></lord-icon>
-            <h3 className="text-2xl font-bold">{title}</h3>
+            <h3 className="text-2xl font-bold custom-subheading">{title}</h3>
             <p>{description}</p>
         </div>
     );

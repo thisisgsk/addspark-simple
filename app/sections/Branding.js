@@ -6,7 +6,7 @@ export default function Branding() {
     return (
         <section className="container pb-16">
             <div className="mx-auto flex px-4 py-16 gap-4 flex-col justify-between items-center text-center">
-                <h2 className='text-3xl md:text-4xl md:max-w-[50%]'>Ready to Elevate Your Brand with Powerful Content Strategies?</h2>
+                <h2 className='text-3xl md:text-4xl md:max-w-[50%] custom-subheading'>Ready to Elevate Your Brand with Powerful Content Strategies?</h2>
                 <p className="md:max-w-[60%]">
                     Founded on the principle of delivering excellence, we specialize in crafting cutting-edge websites,
                     executing targeted campaigns, and offering top-tier PR services that get real results.

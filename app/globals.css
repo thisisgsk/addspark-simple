@@ -3,11 +3,24 @@
 @tailwind utilities;
 
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Afacad Flux", sans-serif;
+  @apply text-lg;
+}
+
+.custom-subheading {
+  font-family: "Shanti", sans-serif;
+}
+
+.custom-heading {
+  font-family: "Montserrat", sans-serif;
 }
 
 .custom-button {
-  @apply p-3 px-6 text-lg font-bold bg-primary text-white shadow-sm shadow-black active:shadow-none;
+  @apply p-3 px-6 text-lg bg-primary text-white shadow-sm shadow-black active:shadow-none;
+}
+
+.custom-input {
+  @apply p-3 shadow-sm;
 }
 
 @layer utilities {
