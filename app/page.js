@@ -6,6 +6,7 @@ import Branding from "@/app/sections/Branding";
 import Team from "@/app/sections/Team";
 import Footer from "@/app/sections/Footer";
 import Contact from "@/app/sections/Contact";
+import Clients from "@/app/sections/Clients";
 export default function Home() {
   return (
     <div className="bg-custombg box-border container mx-auto">
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <Branding />
       <Team />
+      <Clients />
       <Contact />
       <Footer />
     </div>
