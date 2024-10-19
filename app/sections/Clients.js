@@ -16,7 +16,7 @@ export default function Clients() {
     ]
 
     return (
-        <section>
+        <section id="projects">
             <div className="container mx-auto flex px-4 py-16 gap-4 flex-col justify-center items-stretch">
                 <h2 className='text-4xl md:text-5xl text-center custom-heading font-semibold'>Our Clients</h2>
                 <p className="md:max-w-[60%] text-center mx-auto">
