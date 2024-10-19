@@ -46,7 +46,7 @@ export default function Contact() {
     };
 
     return (
-        <section>
+        <section id="contact">
             <div className="container mx-auto flex px-4 py-16 gap-8 flex-col justify-center items-stretch">
                 <h2 className='text-4xl md:text-5xl text-center custom-heading font-semibold'>Get In Touch</h2>
                 <p className="md:max-w-[60%] text-center mx-auto">

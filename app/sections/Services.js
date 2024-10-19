@@ -2,7 +2,7 @@ import ServiceCard from '@/components/ui/servicecard';
 
 export default function Services() {
     return (
-        <section className="text-white">
+        <section id='services' className="text-white">
             <div className="container bg-customprimary mx-auto flex px-4 py-16 gap-4 flex-col justify-center items-center">
                 <h2 className='text-4xl md:text-5xl custom-heading font-semibold'>Our Services</h2>
                 <div className="flex flex-col gap-8">

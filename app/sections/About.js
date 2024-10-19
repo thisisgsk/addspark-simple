@@ -2,7 +2,7 @@ import { FaAnglesDown } from "react-icons/fa6";
 
 export default function About() {
     return (
-        <section className="container">
+        <section id="about" className="container">
             <div className="text-white bg-customsecondary mx-auto px-4 py-16 gap-4 flex flex-col justify-center items-center">
                 <div className="text-2xl custom-subheading">
                     Our mission is simple
