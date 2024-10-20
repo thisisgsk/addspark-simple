@@ -1,6 +1,9 @@
 'use client'
 
-import React from "react";
+import React, { useEffect } from "react";
+import { FaChevronCircleUp } from "react-icons/fa";
+import gsap from "gsap";
+import TextPlugin from "gsap/TextPlugin";
 
 import {
     Dialog,
@@ -15,6 +18,13 @@ import {
 
 export default function Hero() {
 
+    const heroTexts = [
+        "Enhance Your Online Presence",
+        "Ignite Communications",
+        "Boost Your Business",
+        "Empower Your Brand",
+    ];
+
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -24,6 +34,47 @@ export default function Hero() {
     const handlePhoneChange = (e) => setPhone(e.target.value);
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handleMessageChange = (e) => setMessage(e.target.value);
+
+    useEffect(() => {
+
+        gsap.registerPlugin(TextPlugin);
+
+        const flipText = document.getElementById('flip-text');
+        //replaces yourElement's text with "This is the new text" 
+        let i = 0;
+        const changeText = () => {
+            gsap.to(flipText, {
+                duration: 2,
+                text: heroTexts[i],
+                ease: "none",
+                delay: 3,
+                onComplete: () => {
+                    i = (i + 1) % heroTexts.length;
+                    changeText();
+                },
+            });
+        };
+        changeText();
+
+        // Get the div with the chevron-up icon
+        const chevronUpDiv = document.querySelector('.chevron-up');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= 50) {
+                gsap.to(chevronUpDiv, {
+                    y: -120,
+                    duration: 0.5,
+                    ease: 'power1.inOut',
+                });
+            } else {
+                gsap.to(chevronUpDiv, {
+                    y: 100,
+                    duration: 0.5,
+                    ease: 'power1.inOut',
+                });
+            }
+        });
+    }, []);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -61,9 +112,16 @@ export default function Hero() {
 
     return (
         <section className="text-customtext md:px-16 flex flex-col md:flex-row justify-center items-center">
+            <div className="text-[#333333] chevron-up z-50 cursor-pointer text-5xl fixed -bottom-20 right-10" onClick={() => {
+                const scrollOptions = {
+                    duration: 1,
+                    ease: "power2.inOut",
+                };
+                gsap.to(window, { scrollTo: 0, ...scrollOptions });
+            }}><FaChevronCircleUp /></div>
             <div className="container mx-auto flex flex-1 px-5 py-16 flex-col justify-center items-center md:items-start gap-8">
                 <div className="flex flex-col justify-center items-center md:items-start text-center md:text-start gap-4 max-w-2xl">
-                    <h1 className="text-4xl md:text-5xl font-bold custom-heading">
+                    <h1 id="flip-text" className="text-4xl md:text-5xl font-bold custom-heading">
                         Boost Online Visiblity
                     </h1>
                     <h1 className="text-4xl md:text-5xl font-bold custom-heading">
@@ -79,6 +137,7 @@ export default function Hero() {
                             </DialogTrigger>
                             <DialogContent className="max-w-lg">
                                 <DialogTitle className="text-center text-3xl">Contact Us</DialogTitle>
+                                <DialogDescription className="text-center"></DialogDescription>
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full mx-auto bg-customsecondary py-8 p-4 shadow-lg shadow-black">
                                     <input
                                         type="text"
