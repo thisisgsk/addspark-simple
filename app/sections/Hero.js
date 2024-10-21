@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import { FaChevronCircleUp } from "react-icons/fa";
 import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
@@ -11,7 +12,6 @@ import {
     DialogContent,
     DialogDescription,
     DialogFooter,
-    DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
@@ -79,34 +79,29 @@ export default function Hero() {
     async function handleSubmit(e) {
         e.preventDefault();
         if (name && phone && email && message) {
-            var element = document.getElementById('heroclose');
-            element.click();
-
-            // const response = await fetch("https://api.web3forms.com/submit", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //         Accept: "application/json",
-            //     },
-            //     body: JSON.stringify({
-            //         access_key: "6f2b68f8-34dd-474a-b824-2f8aaf1b4ecc",
-            //         name,
-            //         phone,
-            //         email,
-            //         message,
-            //     }),
-            // });
-            // const result = await response.json();
-            // if (result.success) {
-            //     setSubmitted(true);
-            //     setName('');
-            //     setPhone('');
-            //     setEmail('');
-            //     setMessage('');
-            //     setTimeout(() => {
-            //         setSubmitted(false);
-            //     }, 3000)
-            // }
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "089dd47b-2c20-4eb2-bde7-be38a85e3433",
+                    name,
+                    phone,
+                    email,
+                    message,
+                }),
+            });
+            const result = await response.json();
+            if (result.success) {
+                var element = document.getElementById('heroclose');
+                element.click();
+                setName('');
+                setPhone('');
+                setEmail('');
+                setMessage('');
+            }
         }
     };
 
@@ -121,19 +116,33 @@ export default function Hero() {
             }}><FaChevronCircleUp /></div>
             <div className="container mx-auto flex flex-1 px-5 py-16 flex-col justify-center items-center md:items-start gap-8">
                 <div className="flex flex-col justify-center items-center md:items-start text-center md:text-start gap-4 max-w-2xl">
-                    <h1 id="flip-text" className="text-4xl md:text-5xl font-bold custom-heading">
-                        Boost Online Visiblity
-                    </h1>
-                    <h1 className="text-4xl md:text-5xl font-bold custom-heading">
-                        With <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#265D9C] to-[#0BC252]">Add Spark</span>
-                    </h1>
-                    <p className="leading-loose">
-                        <span className="font-semibold">Ready to ignite your brand?</span> At Add Spark, we craft world-class websites, execute laser-focused campaigns, and deliver unmatched PR strategies to make your brand shine. Let&apos;s add the spark your brand needs to stand out in the marketplace!
-                    </p>
+                    <motion.section
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="flex flex-col gap-4"
+                    >
+                        <h1 id="flip-text" className="text-4xl md:text-5xl font-bold custom-heading">
+                            Boost Online Visiblity
+                        </h1>
+                        <h1 className="text-4xl md:text-5xl font-bold custom-heading">
+                            With <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#265D9C] to-[#0BC252]">Add Spark</span>
+                        </h1>
+                        <p className="leading-loose">
+                            <span className="font-semibold">Ready to ignite your brand?</span> At Add Spark, we craft world-class websites, execute laser-focused campaigns, and deliver unmatched PR strategies to make your brand shine. Let&apos;s add the spark your brand needs to stand out in the marketplace!
+                        </p>
+                    </motion.section>
                     <div className="inline-flex">
                         <Dialog>
                             <DialogTrigger asChild>
-                                <a href="#" className="custom-button">Contact Us</a>
+                                <motion.div
+                                    initial={{ x: -100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <a href="#" className="custom-button">Contact Us</a>
+                                </motion.div>
                             </DialogTrigger>
                             <DialogContent className="max-w-lg">
                                 <DialogTitle className="text-center text-3xl">Contact Us</DialogTitle>
@@ -178,9 +187,15 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 flex justify-center items-center">
+            <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex-1 flex justify-center items-center"
+            >
                 <img src="/heropic.svg" alt="Digital Marketing" width={800} height={800} />
-            </div>
+            </motion.div>
         </section >
     );
 }

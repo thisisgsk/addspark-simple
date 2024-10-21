@@ -1,4 +1,7 @@
+'use client'
+
 import { FaAnglesDown } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function About() {
     return (
@@ -10,15 +13,33 @@ export default function About() {
                 <div className="text-2xl animate-bounce">
                     <FaAnglesDown />
                 </div>
-                <div className="text-4xl uppercase custom-heading font-bold md:max-w-[60%] text-center leading-relaxed">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-4xl uppercase custom-heading font-bold md:max-w-[60%] text-center leading-relaxed"
+                >
                     add spark to your brand&apos;s journey and make it stand out
-                </div>
+                </motion.div>
             </div>
             <div className="flex flex-col md:flex-row px-4 md:px-16 py-12">
-                <div className="flex-1 flex justify-center items-center px-4 md:px-0">
+                <motion.div
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex-1 flex justify-center items-center px-4 md:px-0"
+                >
                     <img src="/about.svg" alt="Digital Marketing" width={800} height={800} />
-                </div>
-                <div className="container mx-auto flex flex-1 px-5 py-4 flex-col justify-center items-center md:items-start gap-8">
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="container mx-auto flex flex-1 px-5 py-4 flex-col justify-center items-center md:items-start gap-8"
+                >
                     <div className="flex flex-col justify-center items-center md:items-start text-center text-xl md:text-start gap-4 md:max-w-2xl">
                         <h3 className="text-3xl font-bold custom-subheading">Who We Are</h3>
                         <p><span className="text-2xl font-semibold">At Add Spark,</span> we are a team of passionate innovators, creators, and strategists who are dedicated to bringing brands to life. We believe that every brand has a unique story to tell,
@@ -47,7 +68,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
