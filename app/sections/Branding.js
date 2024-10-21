@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from "framer-motion";
 import { FaBuildingUser, FaImagePortrait, FaPeopleGroup } from "react-icons/fa6";
 import { SiGoogleads, SiAdobephotoshop, SiYoutubeshorts } from "react-icons/si";
 import { MdContentPasteSearch, MdSocialDistance } from "react-icons/md";
@@ -14,7 +17,12 @@ export default function Branding() {
                 </p>
             </div>
             <div className="hidden md:flex flex-col md:flex-row justify-between items-stretch gap-16 px-24">
-                <div className="flex flex-1 flex-col justify-between items-end gap-8">
+                <motion.div
+                    initial={{ x: "100%", opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    className="flex flex-1 flex-col justify-between items-end gap-8">
                     <h3 className="text-xl flex flex-col gap-2 justify-center items-end">
                         <FaBuildingUser className="text-4xl text-customsecondary" />
                         Brand Building
@@ -31,11 +39,20 @@ export default function Branding() {
                         <FaPeopleGroup className="text-4xl text-customsecondary" />
                         Leads Generation
                     </h3>
-                </div>
-                <div className="flex-1">
-                    <img src="/branding.svg" alt="Digital Marketing" width={600} height={600} />
-                </div>
-                <div className="flex flex-1 flex-col justify-between items-start gap-8">
+                </motion.div>
+                <motion.img
+                    initial={{ scale: 0.2, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    src="/branding.svg" alt="Digital Marketing" width={600} height={600} />
+                <motion.div
+                    initial={{ x: "-100%", opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    className="flex flex-1 flex-col justify-between items-start gap-8"
+                >
                     <h3 className="text-xl flex flex-col gap-2 justify-center items-start">
                         <MdContentPasteSearch className="text-4xl text-customsecondary" />
                         Content Strategy
@@ -52,13 +69,23 @@ export default function Branding() {
                         <SiYoutubeshorts className="text-4xl text-customsecondary" />
                         Reels & Shorts
                     </h3>
-                </div>
+                </motion.div>
             </div>
             <div className="flex-1 md:hidden">
-                <img src="/branding.svg" alt="Digital Marketing" width={600} height={600} />
+                <motion.img
+                    initial={{ scale: 0.2, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    src="/branding.svg" alt="Digital Marketing" width={600} height={600} />
             </div>
             <div className="flex md:hidden items-stretch justify-center gap-3">
-                <div className="flex flex-1 flex-col justify-between items-end gap-8">
+                <motion.div
+                    initial={{ x: "-100%", opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    className="flex flex-1 flex-col justify-between items-end gap-8">
                     <h3 className="text-md flex flex-col gap-2 justify-center items-end">
                         <FaBuildingUser className="text-4xl text-customsecondary" />
                         Brand Building
@@ -75,8 +102,13 @@ export default function Branding() {
                         <FaPeopleGroup className="text-4xl text-customsecondary" />
                         Leads Generation
                     </h3>
-                </div>
-                <div className="flex flex-1 flex-col justify-between items-start gap-8">
+                </motion.div>
+                <motion.div
+                    initial={{ x: "100%", opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "backOut" }}
+                    className="flex flex-1 flex-col justify-between items-start gap-8">
                     <h3 className="text-md flex flex-col gap-2 justify-center items-start">
                         <MdContentPasteSearch className="text-4xl text-customsecondary" />
                         Content Strategy
@@ -93,7 +125,7 @@ export default function Branding() {
                         <SiYoutubeshorts className="text-4xl text-customsecondary" />
                         Reels & Shorts
                     </h3>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

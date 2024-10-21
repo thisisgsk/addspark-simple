@@ -17,31 +17,27 @@ export default function Contact() {
     async function handleSubmit(e) {
         e.preventDefault();
         if (name && phone && email && message) {
-            // const response = await fetch("https://api.web3forms.com/submit", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //         Accept: "application/json",
-            //     },
-            //     body: JSON.stringify({
-            //         access_key: "6f2b68f8-34dd-474a-b824-2f8aaf1b4ecc",
-            //         name,
-            //         phone,
-            //         email,
-            //         message,
-            //     }),
-            // });
-            // const result = await response.json();
-            // if (result.success) {
-            //     setSubmitted(true);
-            //     setName('');
-            //     setPhone('');
-            //     setEmail('');
-            //     setMessage('');
-            //     setTimeout(() => {
-            //         setSubmitted(false);
-            //     }, 3000)
-            // }
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "089dd47b-2c20-4eb2-bde7-be38a85e3433",
+                    name,
+                    phone,
+                    email,
+                    message,
+                }),
+            });
+            const result = await response.json();
+            if (result.success) {
+                setName('');
+                setPhone('');
+                setEmail('');
+                setMessage('');
+            }
         }
     };
 

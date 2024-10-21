@@ -48,7 +48,7 @@ export default function Team() {
                     </div>
                     <div className="flex-none w-1/2 md:w-1/3 p-2">
                         <MemberCard
-                            imageUrl={'/boy.jpg'}
+                            imageUrl={'/sharan.jpeg'}
                             name={'Sai Sharan'}
                             designation={'PMO'}
                         ></MemberCard>

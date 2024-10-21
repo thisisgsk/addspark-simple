@@ -1,10 +1,17 @@
-import Image from "next/image";
+'use client'
 
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 const MemberCard = ({ imageUrl, name, designation }) => {
     return (
-        <div className="w-[90%] flex flex-col mx-auto relative text-white">
+        <motion.div
+            initial={{ scale: 0.2, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "backOut" }}
+            className="w-[90%] flex flex-col mx-auto relative text-white">
             <AspectRatio ratio={3 / 4}>
                 <Image src={`${imageUrl}`} alt="Team Member" fill className="object-cover" />
             </AspectRatio>
@@ -13,7 +20,7 @@ const MemberCard = ({ imageUrl, name, designation }) => {
                 <br />
                 <span className="text-xs">{designation}</span>
             </h3>
-        </div >
+        </motion.div >
     );
 };
 
