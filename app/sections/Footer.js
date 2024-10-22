@@ -5,16 +5,24 @@ import { IoMail } from "react-icons/io5";
 
 import Link from "next/link";
 import Image from "next/image";
+import { gsap } from "gsap";
+
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useEffect } from "react";
 
 export default function Footer() {
 
-    const menuItems = [
-        { title: "About Us", target: "about" },
-        { title: "Services", target: "services" },
-        { title: "Our Projects", target: "projects" },
-        { title: "Our Team", target: "team" },
-        { title: "Contact Us", target: "contact" }
-    ];
+    const navItems = new Map([
+        ["About Us", "about"],
+        ["Services", "services"],
+        ["Our Projects", "projects"],
+        ["Our Team", "team"],
+        ["Contact Us", "contact"]
+    ]);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollToPlugin);
+    }, []);
 
     return (
         <section className="container">
@@ -32,14 +40,14 @@ export default function Footer() {
                         <div className="flex flex-col justify-start items-start md:pl-24 md:pt-4">
                             <h3 className="text-2xl">Explore</h3>
                             <FaMinus />
-                            {menuItems.map((item, index) => (
-                                <Link
-                                    href={`#${item.target}`}
-                                    key={`${item}__${index}`}
-                                    alt={item.title}
+                            {Array.from(navItems, ([key]) => (
+                                <div
+                                    onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: `#${navItems.get(key)}`, offsetY: 60 } })}
+                                    key={`${key}__footer`}
+                                    className="nav-item cursor-pointer"
                                 >
-                                    {item.title}
-                                </Link>
+                                    {key}
+                                </div>
                             ))}
                         </div>
                     </div>
