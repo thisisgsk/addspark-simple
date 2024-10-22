@@ -55,11 +55,9 @@ export default function Footer() {
                             <h3 className="text-2xl">Follow Us</h3>
                             <FaMinus />
                             <div className="flex gap-4 pt-2">
-                                <Link href="#" color="secondary-foreground"><FaFacebook className="text-2xl" /></Link>
-                                <Link href="#" color="secondary-foreground"><FaSquareInstagram className="text-2xl" /></Link>
-                                <Link href="#" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
-                                <Link href="#" color="secondary-foreground"><FaSquareYoutube className="text-2xl" /></Link>
-                                <Link href="#" color="secondary-foreground"><FaSquareWhatsapp className="text-2xl" /></Link>
+                                <Link href="https://www.facebook.com/addsparksol/" target="_blank" color="secondary-foreground"><FaFacebook className="text-2xl" /></Link>
+                                <Link href="https://www.instagram.com/addsparksol/" target="_blank" color="secondary-foreground"><FaSquareInstagram className="text-2xl" /></Link>
+                                <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
                             </div>
                         </div>
                     </div>
