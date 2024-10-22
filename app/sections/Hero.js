@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { FaChevronCircleUp } from "react-icons/fa";
 import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
@@ -19,11 +19,13 @@ import {
 export default function Hero() {
 
     const heroTexts = [
-        "Enhance Your Online Presence",
+        "Elevate Your Presence",
         "Ignite Communications",
         "Boost Your Business",
         "Empower Your Brand",
     ];
+
+    const [wordIndex, cycle] = useCycle(0, 1, 2, 3);
 
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
@@ -39,22 +41,9 @@ export default function Hero() {
 
         gsap.registerPlugin(TextPlugin);
 
-        const flipText = document.getElementById('flip-text');
-        //replaces yourElement's text with "This is the new text" 
-        let i = 0;
-        const changeText = () => {
-            gsap.to(flipText, {
-                duration: 2,
-                text: heroTexts[i],
-                ease: "none",
-                delay: 3,
-                onComplete: () => {
-                    i = (i + 1) % heroTexts.length;
-                    changeText();
-                },
-            });
-        };
-        changeText();
+        const intervalId = setInterval(() => {
+            cycle();
+        }, 3000);
 
         // Get the div with the chevron-up icon
         const chevronUpDiv = document.querySelector('.chevron-up');
@@ -74,6 +63,8 @@ export default function Hero() {
                 });
             }
         });
+
+        return () => clearInterval(intervalId);
     }, []);
 
     async function handleSubmit(e) {
@@ -123,9 +114,15 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                         className="flex flex-col gap-4"
                     >
-                        <h1 id="flip-text" className="text-4xl md:text-5xl font-bold custom-heading">
-                            Boost Online Visiblity
-                        </h1>
+                        <motion.h1
+                            key={wordIndex}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 2, ease: 'easeOut' }}
+                            className="text-4xl md:text-5xl font-bold custom-heading">
+                            {heroTexts[wordIndex]}
+                        </motion.h1>
                         <h1 className="text-4xl md:text-5xl font-bold custom-heading">
                             With <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#265D9C] to-[#0BC252]">Add Spark</span>
                         </h1>

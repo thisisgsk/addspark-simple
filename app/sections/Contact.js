@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
 
@@ -48,7 +49,13 @@ export default function Contact() {
                 <p className="md:max-w-[60%] text-center mx-auto">
                     Ready to spark something great? Reach out to us today and let&apos;s turn your brand vision into reality!
                 </p>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full md:w-[30%] mx-auto bg-customsecondary py-8 p-4 shadow-lg shadow-black">
+                <motion.form
+                    initial={{ y: 10, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-6 w-full md:w-[30%] mx-auto bg-customsecondary py-8 p-4 shadow-lg shadow-black">
                     <input
                         type="text"
                         placeholder="Full Name"
@@ -77,7 +84,7 @@ export default function Contact() {
                     >
                     </textarea>
                     <button type="submit" className="custom-button">Contact Us</button>
-                </form>
+                </motion.form>
             </div>
         </section>
     );

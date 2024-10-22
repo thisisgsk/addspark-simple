@@ -9,7 +9,9 @@ import {
 
 import { useEffect } from 'react';
 import Image from "next/image";
+import Link from "next/link";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { FaFacebook, FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -55,8 +57,12 @@ export default function NavBar() {
                         <div key={key} className="nav-item cursor-pointer mr-5 hover:text-gray-900">{key}</div>
                     ))}
                 </nav>
-                <div className="hidden md:inline-flex items-center border-0 py-1 px-3 focus:outline-none mt-4 md:mt-0">
-                    <a href="#" className="custom-button">Contact Us</a>
+                <div className="hidden md:inline-flex items-center md:mt-0">
+                    <div className="flex gap-4">
+                        <Link href="https://www.facebook.com/addsparksol/" target="_blank" className="text-[#1877F2]"><FaFacebook className="text-2xl" /></Link>
+                        <Link href="https://www.instagram.com/addsparksol/" target="_blank" className="text-[#E1306C]"><FaSquareInstagram className="text-2xl" /></Link>
+                        <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
+                    </div>
                 </div>
                 {/* Mobile Nav */}
                 <div className="md:hidden mr-2">
@@ -72,7 +78,11 @@ export default function NavBar() {
                                         <div onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: `#${navItems.get(key)}`, offsetY: 60 } })}>{key}</div>
                                     </SheetClose>
                                 ))}
-                                <a href="#" className="custom-button">Contact Us</a>
+                                <div className="flex gap-4">
+                                    <Link href="https://www.facebook.com/addsparksol/" target="_blank" className="text-[#1877F2]"><FaFacebook className="text-2xl" /></Link>
+                                    <Link href="https://www.instagram.com/addsparksol/" target="_blank" className="text-[#E1306C]"><FaSquareInstagram className="text-2xl" /></Link>
+                                    <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
+                                </div>
                             </nav>
                         </SheetContent>
                     </Sheet>
