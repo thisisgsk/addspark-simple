@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { FaFacebook, FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaSquareInstagram, FaSquareXTwitter, FaLinkedin } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -62,6 +62,7 @@ export default function NavBar() {
                         <Link href="https://www.facebook.com/addsparksol/" target="_blank" className="text-[#1877F2]"><FaFacebook className="text-2xl" /></Link>
                         <Link href="https://www.instagram.com/addsparksol/" target="_blank" className="text-[#E1306C]"><FaSquareInstagram className="text-2xl" /></Link>
                         <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
+                        <Link href="https://www.linkedin.com/company/add-spark-solutions-pvt-ltd/" target="_blank" className="text-[#0a66c2]"><FaLinkedin className="text-2xl" /></Link>
                     </div>
                 </div>
                 {/* Mobile Nav */}
@@ -82,6 +83,7 @@ export default function NavBar() {
                                     <Link href="https://www.facebook.com/addsparksol/" target="_blank" className="text-[#1877F2]"><FaFacebook className="text-2xl" /></Link>
                                     <Link href="https://www.instagram.com/addsparksol/" target="_blank" className="text-[#E1306C]"><FaSquareInstagram className="text-2xl" /></Link>
                                     <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
+                                    <Link href="https://www.linkedin.com/company/add-spark-solutions-pvt-ltd/" target="_blank" className="text-[#0a66c2]"><FaLinkedin className="text-2xl" /></Link>
                                 </div>
                             </nav>
                         </SheetContent>
