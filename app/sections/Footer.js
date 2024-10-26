@@ -1,6 +1,6 @@
 'use client'
 
-import { FaPhone, FaMinus, FaLocationDot, FaFacebook, FaSquareInstagram, FaSquareXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaPhone, FaMinus, FaLocationDot, FaFacebook, FaSquareInstagram, FaSquareXTwitter, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 
 import Link from "next/link";
@@ -67,6 +67,7 @@ export default function Footer() {
                                 <Link href="https://www.instagram.com/addsparksol/" target="_blank" color="secondary-foreground"><FaSquareInstagram className="text-2xl" /></Link>
                                 <Link href="https://x.com/add_sparksol" target="_blank" color="secondary-foreground"><FaSquareXTwitter className="text-2xl" /></Link>
                                 <Link href="https://www.linkedin.com/company/add-spark-solutions-pvt-ltd/" target="_blank" color="secondary-foreground"><FaLinkedin className="text-2xl" /></Link>
+                                <Link href="https://www.youtube.com/@addsparksolutions" target="_blank" color="secondary-foreground"><FaYoutube className="text-2xl" /></Link>
                             </div>
                         </div>
                     </div>
