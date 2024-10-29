@@ -43,14 +43,14 @@ export default function Team() {
                         <MemberCard
                             imageUrl={'/shiva.jpeg'}
                             name={'Shiva'}
-                            designation={'CFO'}
+                            designation={'CMO'}
                         ></MemberCard>
                     </div>
                     <div className="flex-none w-1/2 md:w-1/3 p-2">
                         <MemberCard
                             imageUrl={'/sharan.jpeg'}
                             name={'Sai Sharan'}
-                            designation={'PMO'}
+                            designation={'CFO'}
                         ></MemberCard>
                     </div>
                 </div>

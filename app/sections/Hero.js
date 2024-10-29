@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import { FaChevronCircleUp } from "react-icons/fa";
 import gsap from "gsap";
-import TextPlugin from "gsap/TextPlugin";
+import { sendGTMEvent } from '@next/third-parties/google'
 
 import {
     Dialog,
@@ -39,8 +39,6 @@ export default function Hero() {
 
     useEffect(() => {
 
-        gsap.registerPlugin(TextPlugin);
-
         const intervalId = setInterval(() => {
             cycle();
         }, 3000);
@@ -64,7 +62,10 @@ export default function Hero() {
             }
         });
 
-        return () => clearInterval(intervalId);
+        return () => {
+            clearInterval(intervalId);
+            window.removeEventListener('scroll', () => { });
+        }
     }, []);
 
     async function handleSubmit(e) {
@@ -138,7 +139,7 @@ export default function Hero() {
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <a href="#" className="custom-button">Contact Us</a>
+                                    <a href="#" className="custom-button" onClick={() => sendGTMEvent({ action: 'click', category: 'button', label: 'contact us' })}>Contact Us</a>
                                 </motion.div>
                             </DialogTrigger>
                             <DialogContent className="max-w-lg">

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { sendGTMEvent } from '@next/third-parties/google'
 
 export default function Contact() {
 
@@ -83,7 +84,9 @@ export default function Contact() {
                         onChange={handleMessageChange}
                     >
                     </textarea>
-                    <button type="submit" className="custom-button">Contact Us</button>
+                    <button type="submit" className="custom-button" onPress={() => {
+                        sendGTMEvent({ action: 'click', category: 'button', label: 'submit' });
+                    }}>Contact Us</button>
                 </motion.form>
             </div>
         </section>

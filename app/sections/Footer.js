@@ -4,7 +4,6 @@ import { FaPhone, FaMinus, FaLocationDot, FaFacebook, FaSquareInstagram, FaSquar
 import { IoMail } from "react-icons/io5";
 
 import Link from "next/link";
-import Image from "next/image";
 import { gsap } from "gsap";
 
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -30,7 +29,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row gap-6 justify-center items-start px-8 py-8 md:px-32 mx-auto">
                     <div className="flex flex-col gap-2 justify-center items-start flex-1">
                         <Link href="#nav" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                            <Image src="/whitelogo.png" width={200} height={80} alt="Add Spark Logo" />
+                            <img src="/whitelogo.png" width={200} height={80} alt="Add Spark Logo" />
                         </Link>
                         <p className="font-extralight text-left">
                             Ready to ignite your brand? At Add Spark, we craft world-class websites, execute laser-focused campaigns, and deliver unmatched PR strategies to make your brand shine. Let&apos;s add the spark your brand needs to stand out in the marketplace!
