@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet"
 
 import { useEffect } from 'react';
-import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FaFacebook, FaSquareInstagram, FaSquareXTwitter, FaLinkedin, FaYoutube } from "react-icons/fa6";
@@ -49,7 +48,7 @@ export default function NavBar() {
         <header className="sticky top-0 z-50 backdrop-blur-md">
             <div className="container flex flex-row p-2 md:px-5 items-center justify-between">
                 <a className="flex items-center" href="/">
-                    <Image src='/logo.png' alt="App Spark Logo" width={200} height={200}></Image>
+                    <img src='/logo.png' alt="App Spark Logo" width={200} height={200}></img>
                 </a>
                 {/* Desktop Nav */}
                 <nav className="hidden md:ml-auto md:mr-auto custom-subheading md:flex gap-8 flex-wrap items-center justify-evenly">
@@ -74,7 +73,7 @@ export default function NavBar() {
                         </SheetTrigger>
                         <SheetContent className="bg-custombg">
                             <nav className="py-8 flex gap-8 flex-col custom-subheading items-center text-base justify-center">
-                                <Image src='/logo.png' alt="App Spark Logo" width={150} height={150}></Image>
+                                <img src='/logo.png' alt="App Spark Logo" width={150} height={150}></img>
                                 {Array.from(navItems, ([key]) => (
                                     <SheetClose asChild key={key}>
                                         <div onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: `#${navItems.get(key)}`, offsetY: 60 } })}>{key}</div>

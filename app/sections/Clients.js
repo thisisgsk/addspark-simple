@@ -30,7 +30,7 @@ export default function Clients() {
                             <AspectRatio ratio={16 / 9} className="bg-muted">
                                 <Image
                                     src={`${logo.path}`}
-                                    alt="Photo by Drew Beamer"
+                                    alt="Client"
                                     fill
                                     className="h-full w-full object-cover opacity-90"
                                 />

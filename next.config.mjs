@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
     images: {
-        domains: ['dummyimage.com', 'images.pexels.com'],
+        unoptimized: true,
     },
+    reactStrictMode: true,
 };
 
 export default nextConfig;
