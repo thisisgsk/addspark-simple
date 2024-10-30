@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
   title: "Add Spark Solutions",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <Toaster />
       </body>
     </html>
   );

@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { sendGTMEvent } from '@next/third-parties/google'
+import { sendGTMEvent } from '@next/third-parties/google';
+import { toast } from "sonner";
 
 export default function Contact() {
 
@@ -39,6 +40,9 @@ export default function Contact() {
                 setPhone('');
                 setEmail('');
                 setMessage('');
+                toast("Thanks for reaching out!", {
+                    description: "We'll be in touch soon to ignite something amazing!",
+                });
             }
         }
     };
@@ -62,6 +66,7 @@ export default function Contact() {
                         placeholder="Full Name"
                         className="custom-input"
                         onChange={handleNameChange}
+                        value={name}
                         required
                     />
                     <input
@@ -69,18 +74,21 @@ export default function Contact() {
                         placeholder="Contact No."
                         className="custom-input"
                         onChange={handlePhoneChange}
+                        value={phone}
                         required
                     />
                     <input
                         type="email"
                         placeholder="Email"
                         className="custom-input"
+                        value={email}
                         onChange={handleEmailChange}
                     />
                     <textarea
                         name=""
                         className="custom-input"
                         placeholder="Message"
+                        value={message}
                         onChange={handleMessageChange}
                     >
                     </textarea>
