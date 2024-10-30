@@ -5,6 +5,7 @@
 body {
   font-family: "Afacad Flux", sans-serif;
   @apply text-lg;
+  overflow-x: hidden;
 }
 
 .custom-subheading {
